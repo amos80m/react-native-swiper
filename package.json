@@ -1,12 +1,12 @@
 {
-  "name": "react-native-swiper",
+  "name": "react-native-swiper-split",
   "keywords": [
     "react-component",
     "react-native",
     "ios"
   ],
   "version": "1.4.6",
-  "description": "Swiper component for React Native.",
+  "description": "Fork of Swiper component for React Native,added split option",
   "main": "dist/index.js",
   "scripts": {
     "start": "babel src --out-dir dist --presets es2015,react",
@@ -16,12 +16,12 @@
     "type": "git",
     "url": "git+https://github.com/leecade/react-native-swiper.git"
   },
-  "author": "",
+  "author": "moonsite",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/leecade/react-native-swiper/issues"
+    "url": "https://github.com/amos80m/react-native-swiperissues"
   },
-  "homepage": "https://github.com/leecade/react-native-swiper#readme",
+  "homepage": "https://github.com/amos80m/react-native-swiper#readme",
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-preset-es2015": "^6.9.0",

@@ -1,6 +1,5 @@
 'use strict';
 
-
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /**
                                                                                                                                                                                                                                                                    * react-native-swiper
                                                                                                                                                                                                                                                                    * @author leecade<leecade@163.com>
@@ -296,30 +295,6 @@ module.exports = _react2.default.createClass({
   },
 
 
-  /*
-   * Drag end handle
-   * @param {object} e native event
-   */
-  onScrollEndDrag: function onScrollEndDrag(e) {
-    var contentOffset = e.nativeEvent.contentOffset;
-    var _props = this.props;
-    var horizontal = _props.horizontal;
-    var children = _props.children;
-    var _state = this.state;
-    var offset = _state.offset;
-    var index = _state.index;
-
-    var previousOffset = horizontal ? offset.x : offset.y;
-    var newOffset = horizontal ? contentOffset.x : contentOffset.y;
-
-    if (previousOffset === newOffset && (index === 0 || index === children.length - 1)) {
-      this.setState({
-        isScrolling: false
-      });
-    }
-  },
-
-
   /**
    * Update index after scroll
    * @param  {object} offset content offset
@@ -338,7 +313,7 @@ module.exports = _react2.default.createClass({
     // Note: if touch very very quickly and continuous,
     // the variation of `index` more than 1.
     // parseInt() ensures it's always an integer
-    index = parseInt(index + Math.round(diff / step));
+    index = parseInt(index + diff / step);
 
     if (this.props.loop) {
       if (index <= -1) {
@@ -375,7 +350,10 @@ module.exports = _react2.default.createClass({
     if (_reactNative.Platform.OS === 'android') {
       this.refs.scrollView && this.refs.scrollView.setPage(diff);
     } else {
-      this.refs.scrollView && this.refs.scrollView.scrollTo({ x: x, y: y });
+      this.refs.scrollView && this.refs.scrollView.scrollTo({
+        y: y,
+        x: x
+      });
     }
 
     // update scroll state
@@ -535,6 +513,8 @@ module.exports = _react2.default.createClass({
     );
   },
   renderScrollView: function renderScrollView(pages) {
+    var _this8 = this;
+
     if (_reactNative.Platform.OS === 'ios') return _react2.default.createElement(
       _reactNative.ScrollView,
       _extends({ ref: 'scrollView'
@@ -542,8 +522,10 @@ module.exports = _react2.default.createClass({
         contentContainerStyle: [styles.wrapper, this.props.style],
         contentOffset: this.state.offset,
         onScrollBeginDrag: this.onScrollBegin,
-        onMomentumScrollEnd: this.onScrollEnd,
-        onScrollEndDrag: this.onScrollEndDrag }),
+        onScrollEndDrag: function onScrollEndDrag() {
+          return _this8.setState({ isScrolling: false });
+        },
+        onMomentumScrollEnd: this.onScrollEnd }),
       pages
     );
     return _react2.default.createElement(
@@ -570,10 +552,21 @@ module.exports = _react2.default.createClass({
     var total = state.total;
     var loop = props.loop;
     var dir = state.dir;
+    var fullPage = props.fullPage;
+    var pageSplit = props.pageSplit;
+    var decreasePage = props.decreasePage;
     var key = 0;
 
     var pages = [];
-    var pageStyle = [{ width: state.width, height: state.height }, styles.slide];
+
+    var pageStyle = [{ width:state.width, height: state.height }, styles.slide];
+
+    if(pageSplit){
+      pageStyle = [{ width: state.width / pageSplit, height: state.height }, styles.slide];
+      if(decreasePage){
+        pageStyle = [{ width:( state.width / pageSplit) - decreasePage , height: state.height }, styles.slide];
+      }
+    }
 
     // For make infinite at least total > 1
     if (total > 1) {
