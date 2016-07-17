@@ -24,6 +24,12 @@ $ npm i react-native-swiper-split --save
 | decreasePage | false | `bool` | decrease pixels from child swiper. |
 | pageSplit | 1 | number | how many splits you will see on same page. |
 
+### require 'react-native-swiper-split'
+
+```
+var Swiper = require('react-native-swiper-split')
+```
+
 ### Just add those properties
 
 ```jsx
