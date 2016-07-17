@@ -3,7 +3,7 @@
 ![logo](http://www.moonsite.co.il/images/logo3.png)
 
 The best Swiper component for React Native.
-## With Extras
+#### With Extras
 -----
 
 ### Basic Usage
@@ -25,8 +25,6 @@ $ npm i react-native-swiper-split --save
 | decreasePage | false | `bool` | decrease pixels from child swiper. |
 | pageSplit | 1 | number | how many splits you will see on same page. |
 
-
-> Note: each ScrollResponder be injected with two params: `state` and `context`, you can get `state` and `context`(ref to swiper's `this`) from params, for example:
 
 ```jsx
 var swiper = React.createClass({
