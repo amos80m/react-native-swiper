@@ -2,8 +2,8 @@
 
 ![logo](http://www.moonsite.co.il/images/logo3.png)
 
-The best Swiper component for React Native  ### With Extras.
-
+The best Swiper component for React Native.
+## With Extras
 -----
 
 ### Basic Usage
@@ -14,7 +14,8 @@ The best Swiper component for React Native  ### With Extras.
 $ npm i react-native-swiper-split --save
 ```
 
-- get more options info from ##[react-native-swiper](https://github.com/leecade/react-native-swiper)
+- get more options info from
+## [react-native-swiper](https://github.com/leecade/react-native-swiper)
 
 
 ### New Properties
@@ -44,9 +45,6 @@ var swiper = React.createClass({
 })
 ```
 
-
-
-
 ## Contribution
 
 - [@Amos](mailto:ami@moonsite.co.il) The main author.
@@ -54,6 +52,6 @@ var swiper = React.createClass({
 
 ## Questions
 
-Feel free to [contact me](mailto:ami@moonsite.co.il) or [create an issue](https://github.com/leecade/react-native-swiper-split/issues/new)
+Feel free to [contact me](mailto:ami@moonsite.co.il) or [create an issue](https://github.com/amos80m/react-native-swiper-split/)
 
-> Inspired by[leecade/react-native-swiper](https://github.com/leecade/react-native-swiper) & made with ♥.
+> Inspired by [leecade/react-native-swiper](https://github.com/leecade/react-native-swiper).
