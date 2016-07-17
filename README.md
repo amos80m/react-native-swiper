@@ -14,8 +14,7 @@ The best Swiper component for React Native.
 $ npm i react-native-swiper-split --save
 ```
 
-- get more options info from
-## [react-native-swiper](https://github.com/leecade/react-native-swiper)
+- get more options info from [react-native-swiper](https://github.com/leecade/react-native-swiper)
 
 
 ### New Properties
