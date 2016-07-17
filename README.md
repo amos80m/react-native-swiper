@@ -21,7 +21,7 @@ $ npm i react-native-swiper-split --save
 
 | Prop  | Default  | Type | Description |
 | :------------ |:---------------:| :---------------:| :-----|
-| decreasePage | false | `bool` | decrease pixels from child swiper. |
+| decreasePage | 0 | number | decrease pixels from child swiper. |
 | pageSplit | 1 | number | how many splits you will see on same page. |
 
 ### require 'react-native-swiper-split'
